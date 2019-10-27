@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $OSTYPE == "darwin*" ]
+if [[ "$OSTYPE" == "darwin"* ]]
        then
            PAT="$HOME/keygen_C/a.out"
     else
@@ -18,7 +18,7 @@ if [ $# -lt 2 ]
 then
     echo "Private password:"
     read -s key
-    if [ $OSTYPE == "darwin*" ]
+    if [[ "$OSTYPE" == "darwin"* ]]
        then
            $PAT $1 $key | pbcopy
     else

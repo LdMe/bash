@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-PAT="$HOME/C/keygen/a.out"
+PAT="$HOME/keygen_C/a.out"
 if [ $# -lt 1 ]
 then
     echo "too few arguments"
@@ -12,9 +12,9 @@ if [ $# -lt 2 ]
 then
     echo "Private password:"
     read -s key
-   $PAT $1 $key | xclip -sel clip
+   $PAT $1 $key | pbcopy
     exit 0
 fi
- $PAT $1 $2 | xclip -sel clip
+ $PAT $1 $2 | pbcopy
 
 exit 0

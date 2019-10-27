@@ -1,6 +1,8 @@
 alias create_repo='~/bash/create_git.sh'
+alias init_repo='~/bash/init_repo.sh'
 alias clone='~/bash/clone.sh'
 alias gclone='~/bash/gclone.sh'
+alias pull='~/bash/pull.sh'
 alias crr='~/bash/create_repo.sh'
 alias gadd='~/bash/gadd.sh'
 alias gcommit='~/bash/gcommit.sh'

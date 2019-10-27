@@ -1,7 +1,13 @@
 #!/bin/bash
 
+if [ $OSTYPE == "darwin*" ]
+       then
+           PAT="$HOME/keygen_C/a.out"
+    else
+        PAT="$HOME/C/keygen/a.out"
+    fi
+    
 
-PAT="$HOME/keygen_C/a.out"
 if [ $# -lt 1 ]
 then
     echo "too few arguments"
@@ -12,7 +18,14 @@ if [ $# -lt 2 ]
 then
     echo "Private password:"
     read -s key
-   $PAT $1 $key | pbcopy
+    if [ $OSTYPE == "darwin*" ]
+       then
+           $PAT $1 $key | pbcopy
+    else
+        $PAT $1 $key | xclip -selection c
+    fi
+    
+        
     exit 0
 fi
  $PAT $1 $2 | pbcopy
